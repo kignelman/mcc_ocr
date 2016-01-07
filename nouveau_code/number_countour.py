@@ -32,10 +32,12 @@ for cnt in contours:
             key = cv2.waitKey(0)
             #key = raw_input('What is the number ?')
 
-            if key == 27:  # (escape to quit)
+            if key == -1:  # (escape to quit)
                 sys.exit()
             else:
-                responses.append(int(key))
+                keymod = key % 128
+                print chr(keymod)
+                responses.append(chr(keymod))
                 sample = roismall.reshape((1,100))
                 samples = np.append(samples,sample,0)
 
