@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import cv2
 
-im = cv2.imread('image1.png')
+im = cv2.imread('abc.jpg')
 im3 = im.copy()
 
 gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
@@ -37,7 +37,7 @@ for cnt in contours:
             else:
                 keymod = key % 128
                 print chr(keymod)
-                responses.append(chr(keymod))
+                responses.append(keymod)
                 sample = roismall.reshape((1,100))
                 samples = np.append(samples,sample,0)
 
